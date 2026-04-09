@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends of Fieldway | Community Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand"><a href="#hero">Friends of Fieldway</a></div>
+        
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <div class="menu-overlay" id="menuOverlay"></div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about">About</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#impact">Impact</a></li>
+            
+            <li>
+                <button id="themeToggle" class="theme-toggle icon-btn" aria-label="Toggle Theme">
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+            </li>
+            
+            <li class="nav-cta-item"><a href="#contact" class="nav-cta btn btn-gradient">Get Involved</a></li>
+        </ul>
+    </nav>
+
+    <header id="hero" class="hero-section">
+        <div class="container hero-content">
+            <h1 class="gradient-text">Establishing a Multi-Purpose<br>Community Hub</h1>
+            <p>Supporting Education, Wellbeing, and Community Engagement in a safe, inclusive space.</p>
+            <a href="#contact" class="btn btn-gradient">Support Our Vision</a>
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <div class="container text-center">
+            <h2>Who We Are</h2>
+            <div class="about-content">
+                <p><strong>Friends of Fieldway</strong> is committed to strengthening the local community by providing educational support, social activities, and wellbeing programmes for residents of all ages.</p>
+                <p><strong>Our Mission:</strong> To create a safe, supportive, and enriching space where individuals and families can access resources, develop skills, and build meaningful relationships.</p>
+                <p><strong>Our Vision:</strong> Transforming our building into a vibrant centre for education, mentorship, creative expression, and community support.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="programs" class="section bg-darker">
+        <div class="container">
+            <h2 class="text-center">Our Core Programs</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">📚</div>
+                    <h3>Academic Support</h3>
+                    <p>Structured homework clubs and one-on-one tutoring to help primary and secondary students build confidence and improve educational outcomes.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Youth Engagement</h3>
+                    <p>Safe, structured environments featuring creative workshops, sports, and leadership opportunities to foster positive development.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🤝</div>
+                    <h3>Community Support</h3>
+                    <p>Dedicated women's and men's groups focused on wellbeing, skills development, and building supportive friendships to reduce isolation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="impact" class="section">
+        <div class="container text-center">
+            <h2>Our Community Impact</h2>
+            <p class="subtitle" style="margin-bottom: 20px;">By effectively utilizing this space, we aim to achieve the following:</p>
+            <ul class="impact-list">
+                <li>Support students in achieving better academic outcomes.</li>
+                <li>Provide safe and positive activities for young people.</li>
+                <li>Reduce social isolation among adults and elderly residents.</li>
+                <li>Encourage creativity and cultural expression.</li>
+                <li>Strengthen community relationships and collaboration.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="section bg-darker">
+        <div class="container text-center">
+            <h2>Get Involved</h2>
+            <p>Join us in creating a cornerstone for community life. Send us a message to learn more or offer your support.</p>
+            
+            <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-gradient btn-block" style="width: 100%;">Send Message</button>
+                <div id="formStatus" class="form-status"></div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2026 Friends of Fieldway. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
