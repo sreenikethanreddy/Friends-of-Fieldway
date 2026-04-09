@@ -1,21 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // --- Theme Toggle Logic ---
-    const themeToggle = document.getElementById('themeToggle');
-    const root = document.documentElement; 
-
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-        root.classList.add('light-mode');
-    }
-
-    themeToggle.addEventListener('click', () => {
-        root.classList.toggle('light-mode');
-        if (root.classList.contains('light-mode')) {
-            localStorage.setItem('theme', 'light');
-        } else {
-            localStorage.setItem('theme', 'dark');
-        }
+    // --- Scroll Reveal Animations (The Physics) ---
+    const revealElements = document.querySelectorAll('.reveal');
+    
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                // Stop observing once revealed so it doesn't animate out and in repeatedly
+                observer.unobserve(entry.target); 
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.15, // Triggers when 15% of the element is visible
+        rootMargin: "0px 0px -50px 0px" 
     });
+
+    revealElements.forEach(el => revealObserver.observe(el));
 
     // --- Mobile Drawer Logic ---
     const hamburger = document.getElementById('hamburger');
@@ -23,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuOverlay = document.getElementById('menuOverlay');
     const navItems = document.querySelectorAll('.nav-links a');
 
-    // Toggle Menu
     if (hamburger) {
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
@@ -32,19 +32,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Close Menu Helper Function
     const closeDrawer = () => {
         hamburger.classList.remove('active');
         navLinks.classList.remove('active');
         menuOverlay.classList.remove('active');
     };
 
-    // Close when clicking outside the menu
-    if (menuOverlay) {
-        menuOverlay.addEventListener('click', closeDrawer);
-    }
+    if (menuOverlay) menuOverlay.addEventListener('click', closeDrawer);
 
-    // Close menu when a link is clicked
     navItems.forEach(item => {
         item.addEventListener('click', closeDrawer);
     });
